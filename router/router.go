@@ -1,9 +1,9 @@
 package server
 
 import (
+	"go-web-server/api"
+	"go-web-server/middleware"
 	"os"
-	"singo/api"
-	"singo/middleware"
 
 	"github.com/gin-gonic/gin"
 )

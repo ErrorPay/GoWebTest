@@ -1,8 +1,8 @@
 package service
 
 import (
-	"singo/model"
-	"singo/serializer"
+	"go-web-server/model"
+	"go-web-server/serializer"
 )
 
 // UserRegisterService 管理用户注册服务

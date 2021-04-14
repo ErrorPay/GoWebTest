@@ -1,7 +1,7 @@
 package model
 
 import (
-	"singo/util"
+	"go-web-server/util"
 	"time"
 
 	"github.com/jinzhu/gorm"

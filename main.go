@@ -1,8 +1,8 @@
 package main
 
 import (
-	"singo/conf"
-	"singo/server"
+	"go-web-server/conf"
+	"go-web-server/server"
 )
 
 func main() {

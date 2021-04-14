@@ -1,10 +1,10 @@
 package conf
 
 import (
+	"go-web-server/cache"
+	"go-web-server/model"
+	"go-web-server/util"
 	"os"
-	"singo/cache"
-	"singo/model"
-	"singo/util"
 
 	"github.com/joho/godotenv"
 )

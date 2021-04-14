@@ -3,9 +3,9 @@ package api
 import (
 	"encoding/json"
 	"fmt"
-	"singo/conf"
-	"singo/model"
-	"singo/serializer"
+	"go-web-server/conf"
+	"go-web-server/model"
+	"go-web-server/serializer"
 
 	"github.com/gin-gonic/gin"
 	validator "gopkg.in/go-playground/validator.v8"
