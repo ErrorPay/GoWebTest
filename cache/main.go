@@ -1,11 +1,12 @@
 package cache
 
 import (
+	"context"
 	"go-web-server/util"
 	"os"
 	"strconv"
 
-	"github.com/go-redis/redis"
+	"github.com/go-redis/redis/v8"
 )
 
 // RedisClient Redis缓存客户端单例
@@ -21,7 +22,7 @@ func Redis() {
 		MaxRetries: 1,
 	})
 
-	_, err := client.Ping().Result()
+	_, err := client.Ping(context.Background()).Result()
 
 	if err != nil {
 		util.Log().Panic("连接Redis不成功", err)
