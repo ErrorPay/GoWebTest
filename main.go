@@ -2,7 +2,7 @@ package main
 
 import (
 	"go-web-server/conf"
-	"go-web-server/server"
+	"go-web-server/router"
 )
 
 func main() {
@@ -10,6 +10,6 @@ func main() {
 	conf.Init()
 
 	// 装载路由
-	r := server.NewRouter()
+	r := router.NewRouter()
 	r.Run(":3000")
 }

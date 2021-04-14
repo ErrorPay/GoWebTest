@@ -1,4 +1,4 @@
-package server
+package router
 
 import (
 	"go-web-server/api"
