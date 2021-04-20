@@ -16,7 +16,9 @@ jobs:
     environment:
       TEST_RESULTS: /tmp/test-results
       GO111MODULE: "on"
+      CODECOV_TOKEN="3422a38b-98eb-48cd-9526-477c32e71b55"
 
+      
     steps:
       - checkout
       - run: mkdir -p $TEST_RESULTS
