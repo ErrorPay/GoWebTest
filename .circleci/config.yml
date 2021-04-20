@@ -31,10 +31,12 @@ jobs:
       - run:
           name: Go Test
           command:
-            go test -v ./...
+            PACKAGE_NAMES=$(go list ./... | circleci tests split --split-by=timings --timings-type=classname)
+            gotestsum --junitfile ${TEST_RESULTS}/gotestsum-report.xml -- $PACKAGE_NAMES
 
 workflows:
   version: 2
   install-run:
     jobs:
+      - lint
       - build
