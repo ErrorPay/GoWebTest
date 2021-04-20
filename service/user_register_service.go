@@ -1,8 +1,10 @@
 package service
 
 import (
+	"errors"
 	"go-web-server/model"
 	"go-web-server/serializer"
+	"gorm.io/gorm"
 )
 
 // UserRegisterService 管理用户注册服务
@@ -22,18 +24,17 @@ func (service *UserRegisterService) valid() *serializer.Response {
 		}
 	}
 
-	count := 0
-	model.DB.Model(&model.User{}).Where("nickname = ?", service.Nickname).Count(&count)
-	if count > 0 {
+	var user model.User
+	result := model.DB.Model(&model.User{}).Where("nickname = ?", service.Nickname).First(&user)
+	if !errors.Is(result.Error, gorm.ErrRecordNotFound) {
 		return &serializer.Response{
 			Code: 40001,
 			Msg:  "昵称被占用",
 		}
 	}
 
-	count = 0
-	model.DB.Model(&model.User{}).Where("user_name = ?", service.UserName).Count(&count)
-	if count > 0 {
+	result = model.DB.Model(&model.User{}).Where("user_name = ?", service.UserName).First(&user)
+	if !errors.Is(result.Error, gorm.ErrRecordNotFound) {
 		return &serializer.Response{
 			Code: 40001,
 			Msg:  "用户名已经注册",

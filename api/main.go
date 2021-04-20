@@ -8,7 +8,7 @@ import (
 	"go-web-server/serializer"
 
 	"github.com/gin-gonic/gin"
-	validator "gopkg.in/go-playground/validator.v8"
+	"github.com/go-playground/validator/v10"
 )
 
 // Ping 状态检查页面
