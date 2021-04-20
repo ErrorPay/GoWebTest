@@ -3,11 +3,11 @@
 package api
 
 import (
-	"PingLeMe-Backend/conf"
-	"PingLeMe-Backend/model"
-	"PingLeMe-Backend/serializer"
 	"encoding/json"
 	"fmt"
+	"go-web-server/conf"
+	"go-web-server/model"
+	"go-web-server/serializer"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"

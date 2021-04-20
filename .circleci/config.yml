@@ -5,8 +5,6 @@ jobs:
     docker:
       - image: golangci/golangci-lint:v1.37-alpine
 
-    working_directory: ~/my-project
-
     steps:
       - checkout
       - run: golangci-lint run
@@ -14,8 +12,6 @@ jobs:
   build:
     docker:
       - image: circleci/golang:1.15.11
-    
-    working_directory: ~/my-project
 
     environment:
       TEST_RESULTS: /tmp/test-results
